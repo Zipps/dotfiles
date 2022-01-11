@@ -1,7 +1,10 @@
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/sheamas/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="agnoster"
+
+zstyle ':omz:update' mode auto      # update automatically without asking
+zstyle ':omz:update' frequency 13
 
 plugins=(git tmux)
 
@@ -30,3 +33,6 @@ fh() {
   print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
 }
 
+# NVM
+source ~/.nvm/nvm.sh
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
